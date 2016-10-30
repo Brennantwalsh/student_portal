@@ -56,10 +56,10 @@ class StudentsController < ApplicationController
 		end
 
 		def destroy
-			@student = Unirest.delete("#{ ENV["api_domain_name"] }/api/v1/businesses/#{params[:id]}.json", 
+			@student = Unirest.delete("#{ ENV["api_domain_name"] }/students/#{params[:id]}.json", 
 			                        headers:{ "Accept" => "application/json" }).body
 
 			flash[:success] = response["message"]
-			redirect_to "/businesses"
+			redirect_to "/students"
 		end
 end
