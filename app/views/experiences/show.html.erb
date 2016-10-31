@@ -1,0 +1,29 @@
+
+
+
+<span>
+<button ><%= link_to 'Edit', "/experiences/#{@experience.id}/edit" %></button>
+<button> <%= link_to 'Delete', "/experiences/#{@experience.id}", method: :delete %></button>
+</span>
+
+<h1>Start Date: <%= @experience.start_date %> </h1>
+<h2>Stop Date: <%= @experience.stop_date %></h2>
+<h2>Job Title: <%= @experience.job_title %></h2>
+<h2>Company Name: <%= @experience.company_name  %></h2>
+<h2>Details: <%= @experience.details %></h2>
+
+
+
+  <section>
+    <div>
+      <%= form_tag '/experiences', method: :post do %>
+        <%= hidden_field_tag :student_id, @student.id %>
+    
+      <%= submit_tag 'Add To My Experience', class: "btn btn-default-outline"%>
+      <% end %>  
+       
+    </div>
+  </section>
+
+
+<section>
