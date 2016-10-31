@@ -16,9 +16,7 @@ class Experience < ApplicationRecord
   def self.all 
     collection = []
     Unirest.get("#{ENV["api_domain_name"]}/experiences.json", headers: {
-      "Accept" => "application/json",
-      "X-User-Email" => ENV['USER_EMAIL'],
-      "Authorization" => "Token token=#{ENV['API_TOKEN']}"
+      "Accept" => "application/json"
       }).body_each do |experience_hash|
       collection << Experience.new(experience_hash)
     end
@@ -27,5 +25,14 @@ class Experience < ApplicationRecord
 
   def self.find(params_id)
     Experience.new(Unirest.get("#{ENV["api_domain_name"]}/companies/#{params[:id]}).json").body
+  end
+
+  def self.edit
+    @experience = Unirest.patch("#{ ENV["api_domain_name"]}/experience/#{params[:id]}.json").body
+  end
+
+   def self.show
+    @experience = Unirest.get("#{ ENV["api_domain_name"]}/experience/#{params[:id]}.json").body
+  end
 
 end
