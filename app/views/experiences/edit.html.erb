@@ -1,0 +1,31 @@
+<h1>Edit Experience</h1>
+
+<%= form_tag "/experiences/#{ @experience.id }", method: :patch do %>
+  <div>
+    <%= label_tag :start_date %>
+    <%=  text_field_tag :start_date, @experience.start_date %>
+  </div>
+
+    <div>
+    <%= label_tag :stop_date %>
+    <%=  text_field_tag :stop_date, @experience.stop_date %>
+  </div>
+
+  <div>
+    <%= label_tag :job_title %>
+    <%=  text_field_tag :job_title, @experience.job_title %>
+  </div>
+
+  <div>
+    <%= label_tag :company_name %>
+    <%=  text_field_tag :company_name, @experience.company_name %>
+  </div>
+
+  <div>
+    <%= label_tag :details %>
+    <%=  text_field_tag :details, @experience.details %>
+  </div>
+
+  <button type="submit" class="btn btn-default-outline">Submit</button>
+
+  <% end %>
