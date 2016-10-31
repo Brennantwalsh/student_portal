@@ -1,0 +1,52 @@
+<h1>Update Student Listing</h1>
+
+<%= form_tag "/students/#{@student['id']}", method: :patch do %>
+	<div>
+	  <%= label_tag :first_name %>
+	  <%= text_field_tag :first_name, @student["first_name"] %>
+	</div>
+	<div>
+	  <%= label_tag :last_name %>
+	  <%= text_field_tag :last_name, @student["last_name"] %>
+	</div>
+	<div>
+	  <%= label_tag :email %>
+	  <%= text_field_tag :email, @student["email"] %>
+	</div>
+	<div>
+	  <%= label_tag :phone %>
+	  <%= text_field_tag :phone, @student["phone"] %>
+	</div>
+	<div>
+	  <%= label_tag :short_bio %>
+	  <%= text_field_tag :short_bio, @student["short_bio"] %>
+	</div>
+	<div>
+	  <%= label_tag :linkedin %>
+	  <%= text_field_tag :linkedin, @student["linkedin"] %>
+	</div>
+	<div>
+	  <%= label_tag :twitter %>
+	  <%= text_field_tag :twitter, @student["twitter"] %>
+	</div>
+	<div>
+	  <%= label_tag :blog %>
+	  <%= text_field_tag :blog, @student["blog"] %>
+	</div>
+	<div>
+	  <%= label_tag :online_resume %>
+	  <%= text_field_tag :online_resume, @student["online_resume"] %>
+	</div>
+	<div>
+	  <%= label_tag :github %>
+	  <%= text_field_tag :github, @student["github"] %>
+	</div>
+	<div>
+	  <%= label_tag :photo %>
+	  <%= text_field_tag :photo, @student["photo"] %>
+	</div>
+	<br>
+	<div>
+	  <%= submit_tag 'Update' %>
+	</div>
+<% end %>
