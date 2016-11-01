@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def new
-    render 'new.html.erb'
   end
 
   def create
@@ -18,4 +17,5 @@ class UsersController < ApplicationController
       flash[:warning] = 'Invalid email or password!'
       redirect_to '/signup'
     end
+  end
 end

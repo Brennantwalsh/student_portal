@@ -25,6 +25,7 @@ patch '/experiences/:id' => 'experiences#update'
 get '/experiences/:id' => 'experiences#show'
 delete '/experiences/:id' => 'experiences#destrory'
 
+
 get '/skills' => 'skills#index'
 get '/skills/new' => 'skills#new'
 post '/skills' => 'skills#create'
@@ -32,6 +33,7 @@ get '/skills/:id/edit' => 'skills#edit'
 patch '/skills/:id' => 'skills#update'
 get '/skills/:id' => 'skills#show'
 delete '/skills/:id' => 'skills#destrory'
+
 
 
 end
