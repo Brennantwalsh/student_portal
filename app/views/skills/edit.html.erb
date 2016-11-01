@@ -1,9 +1,9 @@
 <h1>Update Skill</h1>
 
-<%= form_tag "/skills/#{@skill['id']}", method: :patch do %>
+<%= form_tag "/skills/#{@skill.id}", method: :patch do %>
   <div>
-    <%= label_tag :skill %>
-    <%= text_field_tag :skill, @student.skill %>
+    <%= label_tag :skill_name %>
+    <%= text_field_tag :skill_name, @skill.skill_name %>
   </div>
 
 

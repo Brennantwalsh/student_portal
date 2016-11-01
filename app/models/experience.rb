@@ -21,7 +21,7 @@ class Experience
 
 def self.all 
     collection = []
-    Unirest.get("#{ENV["API_DOMAIN_NAME"]}/experiences.json").body_each do |experience_hash|
+    Unirest.get("#{ENV["API_DOMAIN_NAME"]}/experiences.json").body.each do |experience_hash|
       collection << Experience.new(experience_hash)
     end
     collection
