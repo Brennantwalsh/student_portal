@@ -35,5 +35,4 @@ get '/skills/:id' => 'skills#show'
 delete '/skills/:id' => 'skills#destrory'
 
 
-
 end
