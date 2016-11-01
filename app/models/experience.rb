@@ -3,7 +3,7 @@ class Experience
 
 
   def initialize(hash)
-    @student_id = hash["id"]
+    @student_id = hash["student_id"]
     @start_date = hash["start_date"]
     @stop_date = hash["stop_date"]
     @job_title = hash["job_title"]
@@ -17,26 +17,33 @@ class Experience
   #   collection
   # end
 
-ef self.all 
+  
+
+def self.all 
     collection = []
-    Unirest.get("#{ENV["api_domain_name"]}/experience.json", headers: {
-      "Accept" => "application/json"
-      }).body_each do |experience_hash|
+    Unirest.get("#{ENV["API_DOMAIN_NAME"]}/experiences.json").body_each do |experience_hash|
       collection << Experience.new(experience_hash)
     end
     collection
   end
 
   def self.find(params_id)
-    Experience.new(Unirest.get("#{ENV["api_domain_name"]}/experience/#{params[:id]}).json", headers: {
+    Experience.new(Unirest.get("#{ENV['API_DOMAIN_NAME']}/experiences/#{params_id}).json", headers: {
       "Accept" => "application/json"
-      }).body
+      }).body)
   end
 
-  def self.edit
-    @experience = Unirest.patch("#{ ENV["api_domain_name"]}/experience/#{params[:id]}.json", headers: {
+  def self.update
+    Unirest.patch("#{ ENV["API_DOMAIN_NAME"]}/experiences/#{params_id}.json", headers: {
       "Accept" => "application/json"
-      }).body
+      }, parameters: {
+
+        start_date: hash[:start_date],
+        stop_date: hash[:stop_date],
+        job_title: hash[:job_title],
+        company_name: hash[:company_name],
+        details: hash[:details]
+        }).body
   end
 
 
