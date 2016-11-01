@@ -1,0 +1,10 @@
+<h1>Create a New Skill</h1>
+
+<%= form_tag '/skills', method: :post do %>
+  <div>
+    <%= label_tag :skill %>
+    <%= text_field_tag :skill %>
+
+    <%= submit_tag 'Create' %>
+  </div>
+<% end %>

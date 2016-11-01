@@ -1,0 +1,12 @@
+<h1>Update Skill</h1>
+
+<%= form_tag "/skills/#{@skill['id']}", method: :patch do %>
+  <div>
+    <%= label_tag :skill %>
+    <%= text_field_tag :skill, @student["skill"] %>
+  </div>
+
+
+    <%= submit_tag 'Update' %>
+  </div>
+<% end %>
