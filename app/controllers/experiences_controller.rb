@@ -1,7 +1,7 @@
 class ExperiencesController < ApplicationController
 
   def index
-    @experiences = Experiences.all
+    @experiences = Experience.all
   end
 
   def show

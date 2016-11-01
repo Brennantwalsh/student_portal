@@ -12,29 +12,20 @@ class Experience
 
   end
 
-  # def self.all 
-  #   collection = [{"id" => "1", "start_date" => " 12-31-45", "end_date" => "", "job_title" => "Chief", "company_name" => "Cubs", "details" => "I did stuff and it was awesome"}]
-  #   collection
-  # end
-
-ef self.all 
+  def self.all 
     collection = []
-    Unirest.get("#{ENV["api_domain_name"]}/experience.json", headers: {
+    Unirest.get("#{ENV["API_DOMAIN_NAME"]}/experiences.json", headers: {
       "Accept" => "application/json"
-      }).body_each do |experience_hash|
+      }).body.each do |experience_hash|
       collection << Experience.new(experience_hash)
     end
     collection
   end
 
-  def self.find(params_id)
-    Experience.new(Unirest.get("#{ENV["api_domain_name"]}/experience/#{params[:id]}).json", headers: {
-      "Accept" => "application/json"
-      }).body
-  end
+
 
   def self.edit
-    @experience = Unirest.patch("#{ ENV["api_domain_name"]}/experience/#{params[:id]}.json", headers: {
+    @experience = Unirest.patch("#{ ENV["API_DOMAIN_NAME"]}/experiences/#{params[:id]}.json", headers: {
       "Accept" => "application/json"
       }).body
   end
