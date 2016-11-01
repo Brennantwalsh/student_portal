@@ -1,6 +1,7 @@
 class Skill
 
   def initialize(hash)
+    @student_id = hash["student_id"]
     @skill = hash["skill"]
   end
 

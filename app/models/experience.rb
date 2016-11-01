@@ -3,7 +3,7 @@ class Experience
 
 
   def initialize(hash)
-    @student_id = hash["id"]
+    @student_id = hash["student_id"]
     @start_date = hash["start_date"]
     @stop_date = hash["stop_date"]
     @job_title = hash["job_title"]
