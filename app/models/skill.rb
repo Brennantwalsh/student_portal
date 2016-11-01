@@ -16,11 +16,11 @@ class Skill
   end
 
   def self.find(params_id)
-    Skill.new(Unirest.get("#{ENV["api_domain_name"]}/skills/#{params_id}).json").body
+    Skill.new(Unirest.get("#{ENV["API_DOMAIN_NAME"]}/skills/#{params_id}).json").body
   end
 
   def self.update
-    Unirest.patch("#{ ENV["api_domain_name"]}/skills/#{params_id}.json", headers: {
+    Unirest.patch("#{ ENV["API_DOMAIN_NAME"]}/skills/#{params_id}.json", headers: {
       "Accept" => "application/json"
       }, parameters: {
         skills: hash[:skills]

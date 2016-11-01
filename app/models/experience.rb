@@ -21,7 +21,7 @@ class Experience
 
 def self.all 
     collection = []
-    Unirest.get("#{ENV["api_domain_name"]}/experiences.json").body_each do |experience_hash|
+    Unirest.get("#{ENV["API_DOMAIN_NAME"]}/experiences.json").body_each do |experience_hash|
       collection << Experience.new(experience_hash)
     end
     collection
@@ -34,7 +34,7 @@ def self.all
   end
 
   def self.update
-    Unirest.patch("#{ ENV["api_domain_name"]}/experiences/#{params_id}.json", headers: {
+    Unirest.patch("#{ ENV["API_DOMAIN_NAME"]}/experiences/#{params_id}.json", headers: {
       "Accept" => "application/json"
       }, parameters: {
 
