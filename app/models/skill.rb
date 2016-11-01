@@ -1,4 +1,4 @@
-class Skill < ApplicationRecord
+class Skill
 
   def initialize(hash)
     @skill = hash["skill"]
