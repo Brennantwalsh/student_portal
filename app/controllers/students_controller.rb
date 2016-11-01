@@ -32,11 +32,11 @@ class StudentsController < ApplicationController
 		end
 
 		def edit
-			@student = Unirest.get("#{ ENV["api_domain_name"] }/student/#{params[:id]}.json").body
+			@student = Unirest.get("#{ ENV["api_domain_name"] }/students/#{params[:id]}.json").body
 		end
 
 		def update
-			@student = Unirest.patch("#{ ENV["api_domain_name"] }/student/#{params[:id]}.json", 
+			@student = Unirest.patch("#{ ENV["api_domain_name"] }/students/#{params[:id]}.json", 
 	                        headers:{ "Accept" => "application/json" }, 
 	                        parameters: { 
 	                        	:first_name => params[:first_name], 

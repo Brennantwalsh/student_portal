@@ -6,11 +6,11 @@
 <button> <%= link_to 'Delete', "/experiences/#{@experience.id}", method: :delete %></button>
 </span>
 
-<h1>Start Date: <%= @experience.start_date %> </h1>
-<h2>Stop Date: <%= @experience.stop_date %></h2>
-<h2>Job Title: <%= @experience.job_title %></h2>
-<h2>Company Name: <%= @experience.company_name  %></h2>
-<h2>Details: <%= @experience.details %></h2>
+<h1>Start Date: <%= @experience['start_date'] %> </h1>
+<h2>Stop Date: <%= @experience['stop_date'] %></h2>
+<h2>Job Title: <%= @experience['job_title'] %></h2>
+<h2>Company Name: <%= @experience['company_name']  %></h2>
+<h2>Details: <%= @experience['details'] %></h2>
 
 
 

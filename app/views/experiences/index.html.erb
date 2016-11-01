@@ -6,10 +6,10 @@
 
   <% @experiences.each do |experience| %>
   <h1>Start Date: <%= link_to "#{experience.start_date}", "/experiences/#{experience.id}/edit" %> </h1>
-  <h2>Stop Date: <%= @experience.stop_date %></h2>
-  <h2>Job Title: <%= @experience.job_title %></h2>
-  <h2>Company Name: <%= @experience.company_name  %></h2>
-  <h2>Details: <%= @experience.details %></h2>
+  <h2>Stop Date: <%= @experience['stop_date ']%></h2>
+  <h2>Job Title: <%= @experience['job_title'] %></h2>
+  <h2>Company Name: <%= @experience['company_name '] %></h2>
+  <h2>Details: <%= @experience['details'] %></h2>
 
   <% end %>
 
