@@ -25,5 +25,8 @@ patch '/experiences/:id' => 'experiences#update'
 get '/experiences/:id' => 'experiences#show'
 delete '/experiences/:id' => 'experiences#destrory'
 
-
+get '/capstones' => 'capstones#index'
+get '/capstones/:id' => 'capstones#show'
+get '/capstones/:id/edit' => 'capstones#edit'
+patch '/capstones/:id' => 'capstones#update'
 end
