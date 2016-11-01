@@ -37,6 +37,17 @@ ActiveRecord::Schema.define(version: 20161101002251) do
 
   end
 
+  create_table "educations", force: :cascade do |t|
+    t.string   "start_date"
+    t.string   "end_date"
+    t.string   "degree"
+    t.string   "university_name"
+    t.text     "details"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "user_id"
+  end
+
   create_table "experiences", force: :cascade do |t|
     t.string   "start_date"
     t.string   "end_date"

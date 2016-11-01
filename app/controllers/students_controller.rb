@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
 		end
 
 		def create
-			@student = Unirest.post("#{ ENV["api_domain_name"] }/students/#{params[:id]}.json", 
+			@student = Unirest.post("#{ ENV["API_DOMAIN_NAME"] }/students/#{params[:id]}.json", 
 	                        headers:{ "Accept" => "application/json" }, 
 	                        parameters: { 
 	                        	:first_name => params[:first_name], 
@@ -32,11 +32,11 @@ class StudentsController < ApplicationController
 		end
 
 		def edit
-			@student = Unirest.get("#{ ENV["api_domain_name"] }/students/#{params[:id]}.json").body
+			@student = Unirest.get("#{ ENV["API_DOMAIN_NAME"] }/students/#{params[:id]}.json").body
 		end
 
 		def update
-			@student = Unirest.patch("#{ ENV["api_domain_name"] }/students/#{params[:id]}.json", 
+			@student = Unirest.patch("#{ ENV["API_DOMAIN_NAME"] }/students/#{params[:id]}.json", 
 	                        headers:{ "Accept" => "application/json" }, 
 	                        parameters: { 
 	                        	:first_name => params[:first_name], 
@@ -56,7 +56,7 @@ class StudentsController < ApplicationController
 		end
 
 		def destroy
-			@student = Unirest.delete("#{ ENV["api_domain_name"] }/students/#{params[:id]}.json", 
+			@student = Unirest.delete("#{ ENV["API_DOMAIN_NAME"] }/students/#{params[:id]}.json", 
 			                        headers:{ "Accept" => "application/json" }).body
 
 			flash[:success] = response["message"]
