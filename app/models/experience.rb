@@ -37,7 +37,7 @@ def self.all
     Unirest.patch("#{ ENV["api_domain_name"]}/experiences/#{params_id}.json", headers: {
       "Accept" => "application/json"
       }, parameters: {
-        student_id: hash[:student_id],
+
         start_date: hash[:start_date],
         stop_date: hash[:stop_date],
         job_title: hash[:job_title],
