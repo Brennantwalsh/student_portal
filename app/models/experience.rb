@@ -1,10 +1,9 @@
-class Experience < ApplicationRecord
-  belongs_to :user
+class Experience 
   attr_accessor :start_date, :end_date, :job_title, :job_title, :company_name, :details
 
 
   def initialize(hash)
-    @student_id = hash["student_id"]
+    @student_id = hash["id"]
     @start_date = hash["start_date"]
     @stop_date = hash["stop_date"]
     @job_title = hash["job_title"]
@@ -13,9 +12,14 @@ class Experience < ApplicationRecord
 
   end
 
-  def self.all 
+  # def self.all 
+  #   collection = [{"id" => "1", "start_date" => " 12-31-45", "end_date" => "", "job_title" => "Chief", "company_name" => "Cubs", "details" => "I did stuff and it was awesome"}]
+  #   collection
+  # end
+
+ef self.all 
     collection = []
-    Unirest.get("#{ENV["api_domain_name"]}/experiences.json", headers: {
+    Unirest.get("#{ENV["api_domain_name"]}/experience.json", headers: {
       "Accept" => "application/json"
       }).body_each do |experience_hash|
       collection << Experience.new(experience_hash)
@@ -24,21 +28,17 @@ class Experience < ApplicationRecord
   end
 
   def self.find(params_id)
-    Experience.new(Unirest.get("#{ENV["api_domain_name"]}/companies/#{params[:id]}).json").body
+    Experience.new(Unirest.get("#{ENV["api_domain_name"]}/experience/#{params[:id]}).json", headers: {
+      "Accept" => "application/json"
+      }).body
   end
 
   def self.edit
-    @experience = Unirest.patch("#{ ENV["api_domain_name"]}/experience/#{params[:id]}.json").body
+    @experience = Unirest.patch("#{ ENV["api_domain_name"]}/experience/#{params[:id]}.json", headers: {
+      "Accept" => "application/json"
+      }).body
   end
 
-   def self.show
- +    "Student id: #{@student_id},
- +    Start Date: #{@start_date}
- +    Stop Date: #{@stop_date}
- +    Job Title: #{@job_title}
- +    Company Name: #{@company_name}
- +    Details: #{@details}"
 
-  end
 
 end
