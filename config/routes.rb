@@ -25,6 +25,11 @@ patch '/experiences/:id' => 'experiences#update'
 get '/experiences/:id' => 'experiences#show'
 delete '/experiences/:id' => 'experiences#destrory'
 
+get '/capstones' => 'capstones#index'
+get '/capstones/:id' => 'capstones#show'
+get '/capstones/:id/edit' => 'capstones#edit'
+patch '/capstones/:id' => 'capstones#update'
+
 
 get '/skills' => 'skills#index'
 get '/skills/new' => 'skills#new'
@@ -33,6 +38,4 @@ get '/skills/:id/edit' => 'skills#edit'
 patch '/skills/:id' => 'skills#update'
 get '/skills/:id' => 'skills#show'
 delete '/skills/:id' => 'skills#destrory'
-
-
 end

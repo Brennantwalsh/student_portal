@@ -1,0 +1,10 @@
+<h1>Capstones</h1>
+
+<%  @capstones.each do |capstone| %>
+
+	<h2>Name: <%= capstone.name %> </h2>
+	<h4>Description: <%= capstone.description %></h4>
+	<h3>URL: <%= link_to capstone.url, "/capstones/#{capstone.id}" %></h3>
+	<img src=<%= capstone.screenshot %>>
+	
+<% end %>
