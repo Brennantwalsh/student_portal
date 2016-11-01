@@ -1,4 +1,5 @@
 <h2>Capstone Name: <%= @capstone.name %> </h2>
 <h4>Description: <%= @capstone.description %></h4>
-<h3>URL: <%= link_to @capstone.url, "/capstones/#{@capstone['id']}" %></h3>
+<h3>URL: <%= link_to @capstone.url, "#{@capstone.url}" %></h3>
 <img src=<%= @capstone.screenshot %>>
+<h3>Student ID: <%= @capstone.student_id %></h3>
