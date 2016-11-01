@@ -32,7 +32,13 @@ class Experience < ApplicationRecord
   end
 
    def self.show
-    @experience = Unirest.get("#{ ENV["api_domain_name"]}/experience/#{params[:id]}.json").body
+ +    "Student id: #{@student_id},
+ +    Start Date: #{@start_date}
+ +    Stop Date: #{@stop_date}
+ +    Job Title: #{@job_title}
+ +    Company Name: #{@company_name}
+ +    Details: #{@details}"
+
   end
 
 end
