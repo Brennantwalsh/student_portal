@@ -24,6 +24,4 @@ get '/experiences/:id/edit' => 'experirences#edit'
 patch '/experiences/:id' => 'experiences#update'
 get '/experiences/:id' => 'experiences#show'
 delete '/experiences/:id' => 'experiences#destrory'
-
-
 end
