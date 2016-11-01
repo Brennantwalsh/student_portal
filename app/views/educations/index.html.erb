@@ -1,11 +1,11 @@
 <% @educations.each do |education| %>
-<%= education["start_date"]  %>
+<div>
+  <h2><%= education.id  %></h2>
+  <h2><%= education.start_date  %></h2>
+  <h2><%= education.end_date  %></h2>
+<h2><%= education.degree  %></h2>
+<h2><%= education.university_name  %></h2>
+<h2><%= education.details  %></h2>
+</div>
 <br>
-<%= education["end_date"]  %>
-<br>
-<%= education["degree"]  %>
-<br>
-<%= education["university_name"]  %>
-<br>
-<%= education["details"]  %>
 <% end %>
