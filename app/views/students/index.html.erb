@@ -2,13 +2,13 @@
 
 <%  @students.each do |student| %>
 	<h2>Name: <%= student.first_name %> <%= student.last_name %></h2>
-	<h2>Email: <%= student.email %></h2>
-	<h2>Phone: <%= student.phone %></h2>
-	<h4>Bio: <%= student.short_bio %></h4>
+	<h4>Email: <%= student.email %></h4>
+	<h4>Phone: <%= student.phone %></h4>
+	<h3>Bio: <%= student.short_bio %></h3>
 	<h4>LinkedIn: <%= student.linkedin %></h4>
 	<h4>Twitter: <%= student.twitter %></h4>
 	<h4>Blog: <%= student.blog %></h4>
 	<h4>Resume: <%= student.online_resume %></h4>
 	<h4>Github: <%= student.github %></h4>
-	<h5>Photo: <%= student.photo %></h5>
+	<img src=<%= student.photo %>>
 <% end %>

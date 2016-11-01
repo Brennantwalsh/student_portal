@@ -18,12 +18,17 @@ get '/students/:id/edit' => 'students#edit'
 patch '/students/:id' => 'students#update'
 
 get '/experiences' => 'experiences#index'
+get '/experiences/:id' => 'experiences#show'
 get '/experiences/new' => 'experiences#new'
 post '/experiences' => 'experiences#create'
 get '/experiences/:id/edit' => 'experiences#edit'
 patch '/experiences/:id' => 'experiences#update'
+
+delete '/experiences/:id' => 'experiences#destrory'
+
 get '/experiences/:id' => 'experiences#show'
 delete '/experiences/:id' => 'experiences#destroy'
+
 
 get '/capstones' => 'capstones#index'
 get '/capstones/:id' => 'capstones#show'

@@ -8,17 +8,18 @@ class CapstonesController < ApplicationController
 	end
 
 	def edit
-		@capstone = Unirest.get("#{ ENV["api_domain_name"] }/capstones/#{params[:id]}.json").body
+		@capstone = Unirest.get("#{ ENV["API_DOMAIN_NAME"] }/capstones/#{params[:id]}.json").body
 	end
 
 	def update
-		@capstone = Unirest.patch("#{ ENV["api_domain_name"] }/capstones/#{params[:id]}.json", 
+		@capstone = Unirest.patch("#{ ENV["API_DOMAIN_NAME"] }/capstones/#{params[:id]}.json", 
                         headers:{ "Accept" => "application/json" }, 
-                        parameters: { 
+                        parameters: {
                         	:name => params[:name], 
                         	:description => params[:description], 
                         	:url => params[:url], 
-                        	:screenshot => params[:screenshot], 
+                        	:screenshot => params[:screenshot],
+                        	:student_id => params[:student_id], 
                         	}).body
 
 		redirect_to "/capstones/#{@capstone["id"]}"

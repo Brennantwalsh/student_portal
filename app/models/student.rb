@@ -17,25 +17,12 @@ class Student
 	end
 
 	def self.find(params_id)
-		Student.new(Unirest.get("#{ ENV["api_domain_name"] }/students/#{params_id}.json").body)
-	end
-
-	def show_format
-		"Name: #{@first_name} #{last_name},
-		Email: #{@email}
-		Phone: #{@phone}
-		Bio: #{@short_bio}
-		LinkedIn: #{@linkedin}
-		Twitter: #{@twitter}
-		Blog: #{@blog}
-		Resume: #{@online_resume}
-		Github: #{@github}
-		Photo: #{@photo} "
+		Student.new(Unirest.get("#{ ENV["API_DOMAIN_NAME"] }/students/#{params_id}.json").body)
 	end
 
 	def self.all
 		collection = []
-		Unirest.get("#{ ENV["api_domain_name"] }/students.json").body.each do |student_hash|
+		Unirest.get("#{ ENV["API_DOMAIN_NAME"] }/students.json").body.each do |student_hash|
 			collection << Student.new(student_hash)
 		end
 		collection
